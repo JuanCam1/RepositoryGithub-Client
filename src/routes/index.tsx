@@ -35,29 +35,26 @@ function App() {
 	}, [searchUser]);
 
 	return (
-		<div className="min-h-screen bg-gray-100 relative">
-			<div className="absolute top-4 right-4">
-				<ModeToggle />
-			</div>
+		<div className="min-h-screen bg-gray-100 dark:bg-zinc-950 pt-20">
 			<Navbar />
 
 			{error && <ErrorComponent error={error} />}
 
 			{user && (
-				<div className="max-w-6xl mx-auto ">
+				<div className="max-w-6xl mx-auto flex flex-col gap-6">
 					<Header user={user} />
 
-					<div className="grid grid-cols-1 lg:grid-cols-3 gap-6 p-4">
+					<div className="grid grid-cols-1 lg:grid-cols-3 gap-6 ">
 						<Information user={user} />
 
 						<div className="lg:col-span-2 space-y-4">
 							<Card>
 								<CardHeader>
-									<CardTitle className="flex items-center gap-2">
+									<CardTitle className="flex items-center gap-2 text-xl ">
 										<BookOpen className="w-5 h-5" />
 										Repositorios Recientes
 									</CardTitle>
-									<CardDescription>
+									<CardDescription className="text-gray-600 dark:text-indigo-200">
 										Los repositorios más actualizados de{" "}
 										{user.name || user.login}
 									</CardDescription>
@@ -65,7 +62,7 @@ function App() {
 								<CardContent>
 									{loadingRepos ? (
 										<div className="flex items-center justify-center py-8">
-											<div className="text-gray-500">
+											<div className="text-gray-600 dark:text-indigo-200">
 												Cargando repositorios...
 											</div>
 										</div>
@@ -82,7 +79,7 @@ function App() {
 
 			{!user && !loading && !error && (
 				<div className="max-w-6xl mx-auto px-4 py-12 text-center">
-					<div className="text-gray-500">
+					<div className="text-gray-600 dark:text-indigo-200">
 						<Search className="w-16 h-16 mx-auto mb-4 opacity-50" />
 						<h2 className="text-2xl font-semibold mb-2">
 							Busca un usuario de GitHub

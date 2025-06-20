@@ -1,3 +1,4 @@
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import type { FC } from "react";
 import { Button } from "@/components/ui/button";
 import { useRepositoryStore } from "@/store/repository-store";
@@ -14,11 +15,11 @@ const Pagination: FC<Props> = ({ user }) => {
 		(state) => state.handlePageChange,
 	);
 	return (
-		<div className="border-t pt-4 mt-4">
+		<div className="border-t pt-4 mt-4 px-6">
 			<div className="flex items-center justify-between">
-				<div className="text-sm text-gray-600">
-					Página {currentPage} de {totalPages} ({user.public_repos} repositorios
-					en total)
+				<div className="text-sm text-gray-600 dark:text-indigo-400">
+					Página {currentPage} de {totalPages} ({user.public_repos}{" "}
+					repositorios)
 				</div>
 				<div className="flex items-center gap-2">
 					<Button
@@ -27,7 +28,7 @@ const Pagination: FC<Props> = ({ user }) => {
 						onClick={() => handlePageChange(currentPage - 1)}
 						disabled={currentPage === 1 || loadingRepos}
 					>
-						Anterior
+						<ArrowLeft />
 					</Button>
 
 					<div className="flex gap-1">
@@ -88,7 +89,7 @@ const Pagination: FC<Props> = ({ user }) => {
 						onClick={() => handlePageChange(currentPage + 1)}
 						disabled={currentPage === totalPages || loadingRepos}
 					>
-						Siguiente
+						<ArrowRight />
 					</Button>
 				</div>
 			</div>

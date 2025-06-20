@@ -10,11 +10,11 @@ const Repositories = () => {
 			{repositories.map((repo) => (
 				<div
 					key={repo.id}
-					className="border rounded-lg p-4 hover:bg-gray-50 transition-colors"
+					className="border rounded-lg p-4 hover:bg-gray-50 dark:hover:bg-zinc-950/80 transition-colors"
 				>
 					<div className="flex items-start justify-between">
 						<div className="flex-1">
-							<h3 className="font-semibold text-blue-600 hover:underline">
+							<h3 className="font-semibold text-indigo-500 hover:underline">
 								<a
 									href={repo.html_url}
 									target="_blank"
@@ -24,24 +24,26 @@ const Repositories = () => {
 								</a>
 							</h3>
 							{repo.description && (
-								<p className="text-gray-600 mt-1 text-sm">{repo.description}</p>
+								<p className="mt-1 text-sm text-gray-600 dark:text-indigo-200 after:content-['.']">
+									{repo.description}
+								</p>
 							)}
 							<div className="flex items-center gap-4 mt-3 text-sm text-gray-500">
 								{repo.language && (
-									<div className="flex items-center gap-1">
+									<div className="flex items-center gap-1 text-gray-600 dark:text-indigo-200">
 										<div className="w-3 h-3 rounded-full bg-blue-500"></div>
 										<span>{repo.language}</span>
 									</div>
 								)}
-								<div className="flex items-center gap-1">
+								<div className="flex items-center gap-1 text-gray-600 dark:text-indigo-200">
 									<Star className="w-4 h-4" />
 									<span>{repo.stargazers_count}</span>
 								</div>
-								<div className="flex items-center gap-1">
+								<div className="flex items-center gap-1 text-gray-600 dark:text-indigo-200">
 									<GitFork className="w-4 h-4" />
 									<span>{repo.forks_count}</span>
 								</div>
-								<div className="flex items-center gap-1">
+								<div className="flex items-center gap-1 text-gray-600 dark:text-indigo-200">
 									<Eye className="w-4 h-4" />
 									<span>{repo.watchers_count}</span>
 								</div>
@@ -57,7 +59,7 @@ const Repositories = () => {
 							)}
 						</div>
 					</div>
-					<div className="text-xs text-gray-500 mt-2">
+					<div className="text-xs text-gray-500 dark:text-indigo-300 mt-2">
 						Actualizado el {formatDate(repo.updated_at)}
 					</div>
 				</div>
