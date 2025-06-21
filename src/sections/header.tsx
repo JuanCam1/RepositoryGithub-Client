@@ -12,7 +12,7 @@ interface Props {
 const Header: FC<Props> = ({ user }) => {
 	return (
 		<Card className="p-6">
-			<div className="flex justify-between">
+			<div className="flex justify-between ">
 				<div className="flex flex-col md:flex-row items-center gap-4">
 					<Avatar className="size-36 border-4 border-indigo-500 shadow-lg">
 						<AvatarImage
@@ -24,12 +24,12 @@ const Header: FC<Props> = ({ user }) => {
 						</AvatarFallback>
 					</Avatar>
 					<div className="flex flex-col gap-1">
-						<h1 className="text-3xl font-extrabold text-gray-900 dark:text-indigo-500">
+						<h1 className="text-4xl font-extrabold text-indigo-500">
 							{user.name || user.login}
 						</h1>
-						<p className="text-gray-600 dark:text-indigo-200">@{user.login}</p>
+						{/* <p className="text-gray-600 dark:text-indigo-200">@{user.login}</p> */}
 						{user.bio && (
-							<p className="text-gray-700 dark:text-white mt-2 max-w-md">
+							<p className="text-gray-700 text-2xl font-extrabold dark:text-white mt-2 max-w-md">
 								{user.bio}
 							</p>
 						)}
@@ -45,7 +45,7 @@ const Header: FC<Props> = ({ user }) => {
 				</a>
 			</div>
 
-			<div className="flex justify-between items-end">
+			<div className="flex justify-between items-end ">
 				<div className="mt-4 flex flex-wrap gap-4 text-sm text-gray-600">
 					{user.location && (
 						<div className="flex items-center gap-1 text-gray-600 dark:text-indigo-200">
@@ -74,7 +74,7 @@ const Header: FC<Props> = ({ user }) => {
 
 				<div className="mt-4 flex gap-6">
 					<div className="text-center">
-						<div className="text-2xl font-bold text-gray-900 dark:text-indigo-400">
+						<div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
 							{user.public_repos}
 						</div>
 						<div className="text-sm text-gray-600 dark:text-indigo-200">
@@ -82,7 +82,7 @@ const Header: FC<Props> = ({ user }) => {
 						</div>
 					</div>
 					<div className="text-center">
-						<div className="text-2xl font-bold text-gray-900 dark:text-indigo-400">
+						<div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
 							{user.followers}
 						</div>
 						<div className="text-sm text-gray-600 dark:text-indigo-200">
@@ -90,7 +90,7 @@ const Header: FC<Props> = ({ user }) => {
 						</div>
 					</div>
 					<div className="text-center">
-						<div className="text-2xl font-bold text-gray-900 dark:text-indigo-400">
+						<div className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
 							{user.following}
 						</div>
 						<div className="text-sm text-gray-600 dark:text-indigo-200">

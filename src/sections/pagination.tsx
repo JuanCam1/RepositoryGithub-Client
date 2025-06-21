@@ -14,6 +14,7 @@ const Pagination: FC<Props> = ({ user }) => {
 	const handlePageChange = useRepositoryStore(
 		(state) => state.handlePageChange,
 	);
+
 	return (
 		<div className="border-t pt-4 mt-4 px-6">
 			<div className="flex items-center justify-between">
@@ -48,7 +49,7 @@ const Pagination: FC<Props> = ({ user }) => {
 							</>
 						)}
 
-						{Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
+						{Array.from({ length: Math.min(3, totalPages) }, (_, i) => {
 							const pageNum =
 								Math.max(1, Math.min(totalPages - 4, currentPage - 2)) + i;
 							if (pageNum > totalPages) return null;

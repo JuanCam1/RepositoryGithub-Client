@@ -19,37 +19,30 @@ const Information: FC<Props> = ({ user }) => {
 				</CardHeader>
 				<CardContent className="space-y-3">
 					<div>
-						<div className="font-semibold dark:text-indigo-500">
+						<div className="font-semibold text-indigo-500">
 							Nombre de usuario
 						</div>
 						<div className="text-gray-600 dark:text-zinc-300">
 							@{user.login}
 						</div>
 					</div>
-					{user.name && (
-						<div>
-							<div className="font-semibold dark:text-indigo-500">
-								Nombre completo
-							</div>
-							<div className="text-gray-600 dark:text-zinc-300">
-								{user.name}
-							</div>
-						</div>
-					)}
-					{user.location && (
-						<div>
-							<div className="font-semibold dark:text-indigo-500">
-								Ubicación
-							</div>
-							<div className="text-gray-600 dark:text-zinc-300">
-								{user.location}
-							</div>
-						</div>
-					)}
 					<div>
-						<div className="font-semibold dark:text-indigo-500">
-							Miembro desde
+						<div className="font-semibold text-indigo-500">
+							Repositorios públicos
 						</div>
+						<div className="text-gray-600 dark:text-zinc-300">
+							{user.public_repos ?? 0}
+						</div>
+					</div>
+
+					<div>
+						<div className="font-semibold text-indigo-500">Seguidores</div>
+						<div className="text-gray-600 dark:text-zinc-300">
+							{user.followers ?? 0}
+						</div>
+					</div>
+					<div>
+						<div className="font-semibold text-indigo-500">Miembro desde</div>
 						<div className="text-gray-600 dark:text-zinc-300">
 							{formatDate(user.created_at)}
 						</div>

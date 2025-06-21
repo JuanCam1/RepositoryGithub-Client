@@ -28,24 +28,26 @@ const Repositories = () => {
 									{repo.description}
 								</p>
 							)}
-							<div className="flex items-center gap-4 mt-3 text-sm text-gray-500">
+							<div className="flex items-center justify-between mt-3 text-sm text-gray-500">
 								{repo.language && (
 									<div className="flex items-center gap-1 text-gray-600 dark:text-indigo-200">
 										<div className="w-3 h-3 rounded-full bg-blue-500"></div>
 										<span>{repo.language}</span>
 									</div>
 								)}
-								<div className="flex items-center gap-1 text-gray-600 dark:text-indigo-200">
-									<Star className="w-4 h-4" />
-									<span>{repo.stargazers_count}</span>
-								</div>
-								<div className="flex items-center gap-1 text-gray-600 dark:text-indigo-200">
-									<GitFork className="w-4 h-4" />
-									<span>{repo.forks_count}</span>
-								</div>
-								<div className="flex items-center gap-1 text-gray-600 dark:text-indigo-200">
-									<Eye className="w-4 h-4" />
-									<span>{repo.watchers_count}</span>
+								<div className="flex items-center gap-4">
+									<div className="flex items-center gap-1 text-gray-600 dark:text-indigo-200">
+										<Star className="w-4 h-4" />
+										<span>{repo.stargazers_count}</span>
+									</div>
+									<div className="flex items-center gap-1 text-gray-600 dark:text-indigo-200">
+										<GitFork className="w-4 h-4" />
+										<span>{repo.forks_count}</span>
+									</div>
+									<div className="flex items-center gap-1 text-gray-600 dark:text-indigo-200">
+										<Eye className="w-4 h-4" />
+										<span>{repo.watchers_count}</span>
+									</div>
 								</div>
 							</div>
 							{repo.topics && repo.topics.length > 0 && (
@@ -59,7 +61,7 @@ const Repositories = () => {
 							)}
 						</div>
 					</div>
-					<div className="text-xs text-gray-500 dark:text-indigo-300 mt-2">
+					<div className="text-xs text-gray-500 dark:text-indigo-300 mt-2 text-end">
 						Actualizado el {formatDate(repo.updated_at)}
 					</div>
 				</div>
