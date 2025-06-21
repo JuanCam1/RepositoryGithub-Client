@@ -11,7 +11,7 @@ const Navbar = () => {
 	const loading = useRepositoryStore((state) => state.loading);
 	return (
 		<div className="fixed top-0 left-0 w-full bg-white dark:bg-zinc-900 border-b z-50 shadow-sm">
-			<div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between gap-4">
+			<div className="max-w-6xl mx-auto py-4 flex items-center justify-between gap-4">
 				<div className="flex gap-4 w-full">
 					<div className="relative flex-1 max-w-md">
 						<Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
